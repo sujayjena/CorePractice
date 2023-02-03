@@ -1,0 +1,15 @@
+E:\Local Project\MyApp\MyApp.DataAccessLayer\bin\Debug\net6.0\MyApp.DataAccessLayer.deps.json
+E:\Local Project\MyApp\MyApp.DataAccessLayer\bin\Debug\net6.0\MyApp.DataAccessLayer.dll
+E:\Local Project\MyApp\MyApp.DataAccessLayer\bin\Debug\net6.0\MyApp.DataAccessLayer.pdb
+E:\Local Project\MyApp\MyApp.DataAccessLayer\bin\Debug\net6.0\MyApp.Models.dll
+E:\Local Project\MyApp\MyApp.DataAccessLayer\bin\Debug\net6.0\MyApp.Models.pdb
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\MyApp.DataAccessLayer.csproj.AssemblyReference.cache
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\MyApp.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\MyApp.DataAccessLayer.AssemblyInfoInputs.cache
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\MyApp.DataAccessLayer.AssemblyInfo.cs
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\MyApp.DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\MyApp.DataAccessLayer.csproj.CopyComplete
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\MyApp.DataAccessLayer.dll
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\refint\MyApp.DataAccessLayer.dll
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\MyApp.DataAccessLayer.pdb
+E:\Local Project\MyApp\MyApp.DataAccessLayer\obj\Debug\net6.0\ref\MyApp.DataAccessLayer.dll

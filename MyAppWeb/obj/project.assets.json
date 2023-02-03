@@ -3616,6 +3616,30 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "MyApp.DataAccessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "MyApp.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyApp.DataAccessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyApp.DataAccessLayer.dll": {}
+        }
+      },
+      "MyApp.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MyApp.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyApp.Models.dll": {}
+        }
       }
     }
   },
@@ -10292,13 +10316,24 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "MyApp.DataAccessLayer/1.0.0": {
+      "type": "project",
+      "path": "../MyApp.DataAccessLayer/MyApp.DataAccessLayer.csproj",
+      "msbuildProject": "../MyApp.DataAccessLayer/MyApp.DataAccessLayer.csproj"
+    },
+    "MyApp.Models/1.0.0": {
+      "type": "project",
+      "path": "../MyApp.Models/MyApp.Models.csproj",
+      "msbuildProject": "../MyApp.Models/MyApp.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 7.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.2",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.11"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.11",
+      "MyApp.DataAccessLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -10308,11 +10343,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\MyApp\\MyAppWeb\\MyAppWeb.csproj",
+      "projectUniqueName": "E:\\Local Project\\MyApp\\MyAppWeb\\MyAppWeb.csproj",
       "projectName": "MyAppWeb",
-      "projectPath": "C:\\Users\\user\\source\\repos\\MyApp\\MyAppWeb\\MyAppWeb.csproj",
+      "projectPath": "E:\\Local Project\\MyApp\\MyAppWeb\\MyAppWeb.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\MyApp\\MyAppWeb\\obj\\",
+      "outputPath": "E:\\Local Project\\MyApp\\MyAppWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -10332,7 +10367,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Local Project\\MyApp\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj": {
+              "projectPath": "E:\\Local Project\\MyApp\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
