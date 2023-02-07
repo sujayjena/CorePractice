@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Local Project\\MyApp\\MyApp.Models\\MyApp.Models.csproj": {}
+    "F:\\Projects\\Practice App\\CorePractice\\MyApp.Models\\MyApp.Models.csproj": {}
   },
   "projects": {
-    "E:\\Local Project\\MyApp\\MyApp.Models\\MyApp.Models.csproj": {
+    "F:\\Projects\\Practice App\\CorePractice\\MyApp.Models\\MyApp.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Local Project\\MyApp\\MyApp.Models\\MyApp.Models.csproj",
+        "projectUniqueName": "F:\\Projects\\Practice App\\CorePractice\\MyApp.Models\\MyApp.Models.csproj",
         "projectName": "MyApp.Models",
-        "projectPath": "E:\\Local Project\\MyApp\\MyApp.Models\\MyApp.Models.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "E:\\Local Project\\MyApp\\MyApp.Models\\obj\\",
+        "projectPath": "F:\\Projects\\Practice App\\CorePractice\\MyApp.Models\\MyApp.Models.csproj",
+        "packagesPath": "C:\\Users\\sujay\\.nuget\\packages\\",
+        "outputPath": "F:\\Projects\\Practice App\\CorePractice\\MyApp.Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\sujay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

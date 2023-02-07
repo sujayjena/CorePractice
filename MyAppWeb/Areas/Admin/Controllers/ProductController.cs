@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MyApp.DataAccesslayer;
@@ -11,22 +12,38 @@ namespace MyAppWeb.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private IUnitOfWork _unitOfWork;
+        private IWebHostEnvironment _webHostEnvironment;
 
-        public ProductController(IUnitOfWork unitOfWork)
+        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = unitOfWork;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<Product> categories = _unitOfWork.Product.GetAll();
-            return View(categories);
+            ProductVM ProductVM = new ProductVM();
+            ProductVM.Products = _unitOfWork.Product.GetAll();
+            foreach (var item in ProductVM.Products)
+            {
+                item.Category = _unitOfWork.Category.GetT(x => x.Id == item.Id);
+            }
+
+            return View(ProductVM);
         }
 
         [HttpGet]
         public IActionResult CreateUpdate(int? id)
         {
-            ProductVM ProductVM = new ProductVM();
+            ProductVM ProductVM = new ProductVM()
+            {
+                Product = new(),
+                Categories = _unitOfWork.Category.GetAll().Select(x => new SelectListItem()
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString()
+                })
+            };
             if (id == null || id == 0)
             {
                 return View(ProductVM);
@@ -46,18 +63,25 @@ namespace MyAppWeb.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateUpdate(Product product)
+        public IActionResult CreateUpdate(ProductVM productVM, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
-                if (product.Id == 0)
+                string fileName = string.Empty;
+                if (file != null)
                 {
-                    _unitOfWork.Product.Add(product);
-                    _unitOfWork.Save();
+                    string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "ProductImage");
+                    fileName = Guid.NewGuid().ToString() + "-" + file.FileName;
+                    string filePath = Path.Combine(uploadDir, fileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    productVM.Product.ImageUrl = @"\ProductImage\" + fileName;
                 }
-                else
+                if (productVM.Product.Id == 0)
                 {
-                    _unitOfWork.Product.Update(product);
+                    _unitOfWork.Product.Add(productVM.Product);
                     _unitOfWork.Save();
                     return RedirectToAction("Index");
                 }

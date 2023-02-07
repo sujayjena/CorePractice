@@ -20,7 +20,7 @@ namespace MyApp.DataAccessLayer.Infrastructure.Repository
 
         public void Update(Product product)
         {
-            var productDB = _context.Products.FirstOrDefault(x => x.Id == product.Id);
+            var productDB = _context.Product.FirstOrDefault(x => x.Id == product.Id);
             if (productDB != null)
             {
                 productDB.Name = product.Name;
