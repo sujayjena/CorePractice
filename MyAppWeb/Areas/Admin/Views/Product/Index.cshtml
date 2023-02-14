@@ -9,7 +9,7 @@
     <a asp-action="CreateUpdate" asp-controller="Product">Create  Product</a>
 </div>
 
-<table class="table table-bordered table-striped" style="width:100%">
+<table id="myTable" class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
             <th>
@@ -25,31 +25,11 @@
                 Category
             </th>
             <th>
-                Edit
+                Action
             </th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var item in Model.Products)
-        {
-            <tr>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @item.Description
-                </td>
-                <td>
-                    @item.Price
-                </td>
-                <td>
-                    @item.Category.Name
-                </td>
-                <td role="group">
-                    <a asp-action="CreateUpdate" asp-controller="Category" asp-route-id="@item.Id">Edit</a>
-                    <a asp-action="Delete" asp-controller="Category" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
 </table>
+@section scripts{
+    <script src="~/js/product.js"></script>
+}

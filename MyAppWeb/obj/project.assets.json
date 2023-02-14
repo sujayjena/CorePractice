@@ -11826,19 +11826,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sujay\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Projects\\Practice App\\CorePractice\\MyAppWeb\\MyAppWeb.csproj",
+      "projectUniqueName": "E:\\Local Project\\MyApp\\MyAppWeb\\MyAppWeb.csproj",
       "projectName": "MyAppWeb",
-      "projectPath": "F:\\Projects\\Practice App\\CorePractice\\MyAppWeb\\MyAppWeb.csproj",
-      "packagesPath": "C:\\Users\\sujay\\.nuget\\packages\\",
-      "outputPath": "F:\\Projects\\Practice App\\CorePractice\\MyAppWeb\\obj\\",
+      "projectPath": "E:\\Local Project\\MyApp\\MyAppWeb\\MyAppWeb.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "E:\\Local Project\\MyApp\\MyAppWeb\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\sujay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11852,8 +11857,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\Projects\\Practice App\\CorePractice\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj": {
-              "projectPath": "F:\\Projects\\Practice App\\CorePractice\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj"
+            "E:\\Local Project\\MyApp\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj": {
+              "projectPath": "E:\\Local Project\\MyApp\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj"
             }
           }
         }
@@ -11900,7 +11905,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },

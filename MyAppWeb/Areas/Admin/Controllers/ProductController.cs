@@ -11,7 +11,7 @@ namespace MyAppWeb.Areas.Admin.Controllers
 {
     public class ProductController : Controller
     {
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         private IWebHostEnvironment _webHostEnvironment;
 
         public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
@@ -20,16 +20,20 @@ namespace MyAppWeb.Areas.Admin.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
+        #region APICALL
+
+        public IActionResult AllProducts()
+        {
+            var products = _unitOfWork.Product.GetAll(includeProperties: "Category");
+
+            return Json(new { data = products });
+        }
+
+        #endregion
+
         public IActionResult Index()
         {
-            ProductVM ProductVM = new ProductVM();
-            ProductVM.Products = _unitOfWork.Product.GetAll();
-            foreach (var item in ProductVM.Products)
-            {
-                item.Category = _unitOfWork.Category.GetT(x => x.Id == item.Id);
-            }
-
-            return View(ProductVM);
+            return View();
         }
 
         [HttpGet]
@@ -82,9 +86,10 @@ namespace MyAppWeb.Areas.Admin.Controllers
                 if (productVM.Product.Id == 0)
                 {
                     _unitOfWork.Product.Add(productVM.Product);
-                    _unitOfWork.Save();
-                    return RedirectToAction("Index");
+                    TempData["success"] = "Product Saved";
                 }
+                _unitOfWork.Save();
+                return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
         }
@@ -118,24 +123,20 @@ namespace MyAppWeb.Areas.Admin.Controllers
             return View("Index");
         }
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpDelete]
         public IActionResult Delete(int? id)
         {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-
             var Product = _unitOfWork.Product.GetT(x => x.Id == id);
             if (Product == null)
             {
-                return NotFound();
+                return Json(new { success = false, message = "Error in Fetching Data" });
             }
-            _unitOfWork.Product.Delete(Product);
-            _unitOfWork.Save();
-            return RedirectToAction("Index");
+            else
+            {
+                _unitOfWork.Product.Delete(Product);
+                _unitOfWork.Save();
+                return Json(new { success = true, message = "Deleted Successfull" });
+            }
         }
-
     }
 }
